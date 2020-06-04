@@ -1,6 +1,7 @@
-import React from "react";
+//import React from "react";
 import { createMuiTheme } from "@material-ui/core/styles";
-import { red, green, indigo } from "@material-ui/core/colors";
+// import { red, green, indigo } from "@material-ui/core/colors";
+// import Theme from Theme.json;
 
 const EGaDSTheme = createMuiTheme({
     palette: {
@@ -9,12 +10,13 @@ const EGaDSTheme = createMuiTheme({
             white: "rgba(255, 0, 0, 1)",
         },
         background: {
-            paper: "rgba(57, 57, 57, 1)",
-            default: "rgba(53, 53, 53, 1)",
+            paper: "rgba(60, 60, 60, .33)",
+            default: "rgba(20, 20, 20, .5)",
+            contrastText: "rgba(255, 255, 255, 1)",
         },
         primary: {
-            light: "rgba(255, 0, 0, 1)",
-            main: "rgba(142, 0, 0, 1)",
+            light: "rgba(0, 0, 255, 1)",
+            main: "rgba(0, 0, 142, 1)",
             dark: "#303f9f",
             contrastText: "rgba(255, 255, 255, 1)",
         },
@@ -35,6 +37,18 @@ const EGaDSTheme = createMuiTheme({
             secondary: "rgba(204, 204, 204, 0.54)",
             disabled: "rgba(134, 113, 113, 0.38)",
             hint: "rgba(233, 202, 243, 1)",
+        },
+        gradient: {
+            primary: "rgb(15,8,18)",
+            secondary: "rgb(19, 166, 240)",
+        },
+    },
+    overrides: {
+        MuiButton: {},
+        MuiAppBar: {
+            colorPrimary: {
+                backgroundColor: "rgba(0,0,0,.4)",
+            },
         },
     },
 });
