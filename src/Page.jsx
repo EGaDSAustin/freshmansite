@@ -8,7 +8,7 @@ import goodboye from "./goodboye.png";
 const styles = (theme) => ({
     root: {
         backgroundColor: theme.palette.background.default,
-        backgroundImage: `linear-gradient(${theme.palette.gradient.primary}, ${theme.palette.gradient.secondary})`,
+        backgroundImage: `linear-gradient(${theme.palette.gradient.primary} 0%, ${theme.palette.gradient.secondary} 75%, ${theme.palette.gradient.tertiary} 100%)`,
     },
     splash: {
         backgroundColor: theme.palette.background.default,

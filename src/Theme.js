@@ -40,7 +40,8 @@ const EGaDSTheme = createMuiTheme({
         },
         gradient: {
             primary: "rgb(15,8,18)",
-            secondary: "rgb(19, 166, 240)",
+            secondary: "rgb(17, 87, 129)",
+            tertiary: "rgb(19, 166, 240)",
         },
     },
     overrides: {
