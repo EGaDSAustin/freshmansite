@@ -4,7 +4,17 @@ import { withStyles } from "@material-ui/styles";
 import Header from "./components/Header.js";
 import cn from "classnames";
 import goodboye from "./goodboye.png";
-import splash from "./assets/carmen.jpg";
+import splash from "./assets/photos/carmen.jpg";
+import torus from "./assets/blueshape1.png";
+import twisty from "./assets/blueshape3.png";
+import sheets from "./assets/blueshape2.png";
+import hole from "./assets/blueshape5.png";
+import ball from "./assets/blueshape4.png";
+import gameJam1 from "./assets/photos/gamejam1.JPG";
+import gameJam2 from "./assets/photos/gamejam2.JPG";
+import gameJam3 from "./assets/photos/gamejam3.JPG";
+import tetris from "./assets/photos/tetris.JPG";
+import whale from "./assets/photos/whale.JPG";
 
 const styles = (theme) => ({
     root: {
@@ -31,10 +41,12 @@ const styles = (theme) => ({
         alignItems: "center",
     },
     box1: {
-        paddingBottom: "4px",
+        padding: "32px",
         color: theme.palette.text.primary, // TODO: this jank
         width: "30%",
-        minWidth: "400px",
+        minWidth: "300px",
+        position: "relative",
+        zIndex: "1",
     },
     goodBoye: {
         width: "15%",
@@ -43,12 +55,31 @@ const styles = (theme) => ({
     },
     bestBoye: {
         width: "100%",
+        verticalAlign: "top",
+    },
+    bestBoyeBox: {
+        border: "2px solid white",
+        padding: "0",
+        width: "100%",
+        display: "inline-block",
+        margin: "32px",
         position: "relative",
     },
-    bestBoyeBorder: {
-        border: "2px solid white",
-        padding: "16px",
-        display: "inline-block",
+    bestBoyeBorderRight: {
+        position: "absolute",
+        border: "2px solid blue",
+        width: "100%",
+        height: "100%",
+        top: "2px",
+        left: "4px",
+    },
+    bestBoyeBorderLeft: {
+        position: "absolute",
+        border: "2px solid blue",
+        width: "100%",
+        height: "100%",
+        top: "2px",
+        left: "-8px",
     },
     splashImg: {
         width: "50%",
@@ -59,7 +90,42 @@ const styles = (theme) => ({
     body: {
         backgroundColor: theme.palette.background.default,
         maxWidth: "100vw",
+        position: "relative",
+        overflow: "hidden",
     },
+    leftBox: {
+        textAlign: "right",
+    },
+    shape: {
+        position: "absolute",
+        height: "auto",
+        minWidth: "500px",
+    },
+    torus: {
+        top: "10%",
+        left:"-33%",
+        width: "60%",
+    },
+    twisty: {
+        top: "-17%",
+        right: "-27%",
+        width: "60%"
+    },
+    sheets: {
+        top: "60%",
+        left: "-30%",
+        width: "60%",
+    },
+    hole: {
+        top: "43%",
+        right: "-25%",
+        width: "60%",
+    },
+    ball: {
+        top: "85%",
+        right: "-30%",
+        width: "60%",
+    }
 });
 
 const Page = ({ classes, rootClassName, className, ...props }) => {
@@ -79,9 +145,10 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                     egads: at least we're not acm.
                 </Typography>
             </Container>
+
             <Container className={cn(classes.body)}>
                 <Box className={cn(classes.box0)}>
-                    <Box className={cn(classes.box1)}>
+                    <Box className={cn(classes.box1,classes.leftBox)}>
                         <Typography variant="h4" className={cn(classes.title)}>
                             ABOUT US
                         </Typography>
@@ -95,23 +162,27 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                         </Typography>
                     </Box>
                     <Box className={cn(classes.box1)}>
-                        <Box className={cn(classes.bestBoyeBorder)}>
+                        <Box className={cn(classes.bestBoyeBox)}>
                             <img
-                                src={goodboye}
+                                src={gameJam1}
                                 alt="a very good boye"
                                 className={cn(classes.bestBoye)}
                             />
+                            <div className={cn(classes.bestBoyeBorderRight)}></div>
                         </Box>
                     </Box>
                 </Box>
 
                 <Box className={cn(classes.box0)}>
                     <Box className={cn(classes.box1)}>
-                        <img
-                            src={goodboye}
-                            alt="a very good boye"
-                            className={cn(classes.bestBoye)}
-                        />
+                        <Box className={cn(classes.bestBoyeBox)}>
+                            <img
+                                src={gameJam2}
+                                alt="a very good boye"
+                                className={cn(classes.bestBoye)}
+                            />
+                            <div className={cn(classes.bestBoyeBorderLeft)}> </div>
+                        </Box>
                     </Box>
                     <Box className={cn(classes.box1)}>
                         <Typography variant="h4" className={cn(classes.title)}>
@@ -132,7 +203,7 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                 </Box>
 
                 <Box className={cn(classes.box0)}>
-                    <Box className={cn(classes.box1)}>
+                    <Box className={cn(classes.box1,classes.leftBox)}>
                         <Typography variant="h4" className={cn(classes.title)}>
                             WORKSHOPS
                         </Typography>
@@ -147,22 +218,28 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                         </Typography>
                     </Box>
                     <Box className={cn(classes.box1)}>
-                        <img
-                            src={goodboye}
-                            alt="a very good boye"
-                            className={cn(classes.bestBoye)}
-                        />
+                        <Box className={cn(classes.bestBoyeBox)}>
+                            <img
+                                src={gameJam3}
+                                alt="a very good boye"
+                                className={cn(classes.bestBoye)}
+                            />
+                            <div className={cn(classes.bestBoyeBorderRight)}></div>
+                        </Box>
                     </Box>
                 </Box>
 
                 <Box className={cn(classes.box0)}>
                     <Box className={cn(classes.box1)}>
-                        <img
-                            src={goodboye}
-                            alt="a very good boye"
-                            className={cn(classes.bestBoye)}
-                        />
-                    </Box>
+                            <Box className={cn(classes.bestBoyeBox)}>
+                                <img
+                                    src={tetris}
+                                    alt="a very good boye"
+                                    className={cn(classes.bestBoye)}
+                                />
+                                <div className={cn(classes.bestBoyeBorderLeft)}></div>
+                            </Box>
+                        </Box>
                     <Box className={cn(classes.box1)}>
                         <Typography variant="h4" className={cn(classes.title)}>
                             GAME JAMS
@@ -178,8 +255,9 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                         </Typography>
                     </Box>
                 </Box>
+
                 <Box className={cn(classes.box0)}>
-                    <Box className={cn(classes.box1)}>
+                    <Box className={cn(classes.box1,classes.leftBox)}>
                         <Typography variant="h4" className={cn(classes.title)}>
                             SOCIAL EVENTS
                         </Typography>
@@ -193,15 +271,43 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                         </Typography>
                     </Box>
                     <Box className={cn(classes.box1)}>
-                        <img
-                            src={goodboye}
-                            alt="a very good boye"
-                            className={cn(classes.bestBoye)}
-                        />
+                        <Box className={cn(classes.bestBoyeBox)}>
+                            <img
+                                src={whale}
+                                alt="a very good boye"
+                                className={cn(classes.bestBoye)}
+                            />
+                            <div className={cn(classes.bestBoyeBorderRight)}></div>
+                        </Box>
                     </Box>
                 </Box>
 
-                <Button>hewwo click me</Button>
+                <img
+                src={torus}
+                alt="torus"
+                className={cn(classes.shape,classes.torus)}
+                />
+                <img
+                src={twisty}
+                alt="twisty"
+                className={cn(classes.shape,classes.twisty)}
+                />
+                <img
+                src={sheets}
+                alt="sheets"
+                className={cn(classes.shape,classes.sheets)}
+                />
+                <img
+                src={hole}
+                alt="hole"
+                className={cn(classes.shape,classes.hole)}
+                />
+                <img
+                src={ball}
+                alt="ball"
+                className={cn(classes.shape,classes.ball)}
+                />
+
             </Container>
             <Container className={cn(classes.footer)}>
                 <Typography>welcome to stinky feetgads</Typography>
