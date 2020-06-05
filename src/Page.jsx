@@ -62,7 +62,7 @@ const styles = (theme) => ({
         padding: "0",
         width: "100%",
         display: "inline-block",
-        margin: "32px",
+        margin: "auto",
         position: "relative",
     },
     bestBoyeBorderRight: {
