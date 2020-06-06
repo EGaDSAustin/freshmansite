@@ -23,14 +23,34 @@ const styles = (theme) => ({
     },
     splash: {
         height: "100vh",
-        margin: 0,
-        maxWidth: "100vw",
-        backgroundImage: splash,
+        textAlign: "center",
+        backgroundImage: `url(${splash})`,
+        backgroundAttachment: "fixed",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
     },
     splashText: {
-        color: theme.palette.text.primary,
+        color: "white",
     },
-    papuh: {},
+    splashTextBox: {
+        position: "absolute",
+        top: "80%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        padding: "16px",
+        backgroundColor: "rgba(0,0,0,0.69)",
+        borderRadius: "8px",
+    },
+    textBox: {
+        padding: "16px",
+        backgroundColor: "rgba(0,0,0,0.420)",
+        borderRadius: "8px",
+    },
+    splashImg: {
+        height: "100%",
+        verticalAlign: "top",
+    },
     footer: {
         backgroundColor: theme.palette.primary,
     },
@@ -81,9 +101,6 @@ const styles = (theme) => ({
         top: "2px",
         left: "-8px",
     },
-    splashImg: {
-        width: "50%",
-    },
     title: {
         color: theme.palette.text.title,
     },
@@ -92,6 +109,7 @@ const styles = (theme) => ({
         maxWidth: "100vw",
         position: "relative",
         overflow: "hidden",
+        top: "100%"
     },
     leftBox: {
         textAlign: "right",
@@ -117,7 +135,7 @@ const styles = (theme) => ({
         width: "60%",
     },
     hole: {
-        top: "43%",
+        top: "35%",
         right: "-25%",
         width: "60%",
     },
@@ -134,16 +152,11 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
             <Header position="sticky" />
 
             <Container className={cn(classes.splash)}>
-                <Box>
-                    <img
-                        src={splash}
-                        alt="we're cool"
-                        className={cn(classes.splashImg)}
-                    />
+                <Box className={cn(classes.splashTextBox)}>
+                    <Typography className={cn(classes.splashText)}>
+                        EGADS: At least we're not ACM.
+                    </Typography>
                 </Box>
-                <Typography className={cn(classes.spashText)}>
-                    egads: at least we're not acm.
-                </Typography>
             </Container>
 
             <Container className={cn(classes.body)}>
@@ -307,8 +320,8 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                 alt="ball"
                 className={cn(classes.shape,classes.ball)}
                 />
-
             </Container>
+            
             <Container className={cn(classes.footer)}>
                 <Typography>welcome to stinky feetgads</Typography>
                 <img
