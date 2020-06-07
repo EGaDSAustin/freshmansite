@@ -32,6 +32,8 @@ const styles = (theme) => ({
     },
     splashText: {
         color: "white",
+        position: "relative",
+        zIndex: "2",
     },
     splashTextBox: {
         position: "absolute",
@@ -59,14 +61,19 @@ const styles = (theme) => ({
         flexWrap: "wrap",
         justifyContent: "center",
         alignItems: "center",
+        width: "69%",
+        padding: "32px",
+        margin: "16px auto",
+        position: "relative",
     },
     box1: {
         padding: "32px",
         color: theme.palette.text.primary, // TODO: this jank
-        width: "30%",
+        width: "50%",
         minWidth: "300px",
         position: "relative",
-        zIndex: "1",
+        zIndex: "2",
+        boxSizing: "border-box",
     },
     goodBoye: {
         width: "15%",
@@ -103,6 +110,7 @@ const styles = (theme) => ({
     },
     title: {
         color: theme.palette.text.title,
+        padding: "8px",
     },
     body: {
         backgroundColor: theme.palette.background.default,
@@ -143,7 +151,19 @@ const styles = (theme) => ({
         top: "85%",
         right: "-30%",
         width: "60%",
-    }
+    },
+    blurBox: {
+        position: "absolute",
+        top: "0",
+        left: "0",
+        height: "100%",
+        width: "100%",
+        backgroundColor: "rgba(0,0,0,0.069420)",
+        zIndex: "1",
+        borderRadius: "8px",
+        backdropFilter: "blur(4.20px)",
+        filter: "blur(0.69px)"
+    },
 });
 
 const Page = ({ classes, rootClassName, className, ...props }) => {
@@ -153,6 +173,7 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
 
             <Container className={cn(classes.splash)}>
                 <Box className={cn(classes.splashTextBox)}>
+                    <Box className={cn(classes.blurBox)}></Box>
                     <Typography className={cn(classes.splashText)}>
                         EGADS: At least we're not ACM.
                     </Typography>
@@ -161,6 +182,7 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
 
             <Container className={cn(classes.body)}>
                 <Box className={cn(classes.box0)}>
+                    <Box className={cn(classes.blurBox)}></Box>
                     <Box className={cn(classes.box1,classes.leftBox)}>
                         <Typography variant="h4" className={cn(classes.title)}>
                             ABOUT US
@@ -187,6 +209,7 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                 </Box>
 
                 <Box className={cn(classes.box0)}>
+                    <Box className={cn(classes.blurBox)}></Box>
                     <Box className={cn(classes.box1)}>
                         <Box className={cn(classes.bestBoyeBox)}>
                             <img
@@ -216,6 +239,7 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                 </Box>
 
                 <Box className={cn(classes.box0)}>
+                    <Box className={cn(classes.blurBox)}></Box>
                     <Box className={cn(classes.box1,classes.leftBox)}>
                         <Typography variant="h4" className={cn(classes.title)}>
                             WORKSHOPS
@@ -243,6 +267,7 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                 </Box>
 
                 <Box className={cn(classes.box0)}>
+                    <Box className={cn(classes.blurBox)}></Box>
                     <Box className={cn(classes.box1)}>
                             <Box className={cn(classes.bestBoyeBox)}>
                                 <img
@@ -270,6 +295,7 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                 </Box>
 
                 <Box className={cn(classes.box0)}>
+                    <Box className={cn(classes.blurBox)}></Box>
                     <Box className={cn(classes.box1,classes.leftBox)}>
                         <Typography variant="h4" className={cn(classes.title)}>
                             SOCIAL EVENTS
