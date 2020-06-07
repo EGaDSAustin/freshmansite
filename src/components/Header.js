@@ -34,12 +34,15 @@ const styles = {
         maxWidth: "calc(50% - 60px)",
         fontFamily: "ElectricBoots",
     },
+    bar: {
+        padding: "16px",
+    }
 };
 
 const Header = ({ classes, position, ...props }) => {
     return (
         <AppBar position={position}>
-            <Toolbar>
+            <Toolbar className={cn(classes.bar)}>
                 <Typography variant="h4" className={cn(classes.title)}>
                     electronic ganime developers society
                 </Typography>

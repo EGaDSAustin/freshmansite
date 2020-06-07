@@ -34,6 +34,10 @@ const styles = (theme) => ({
         color: "white",
         position: "relative",
         zIndex: "2",
+        fontFamily: "inherit",
+        fontWeight: "bold",
+        letterSpacing: "0.15em",
+        paddingLeft: "0.15em",
     },
     splashTextBox: {
         position: "absolute",
@@ -41,7 +45,7 @@ const styles = (theme) => ({
         left: "50%",
         transform: "translate(-50%, -50%)",
         padding: "16px",
-        backgroundColor: "rgba(0,0,0,0.69)",
+        backgroundColor: "rgba(0,0,0,0.420)",
         borderRadius: "8px",
     },
     textBox: {
@@ -68,12 +72,13 @@ const styles = (theme) => ({
     },
     box1: {
         padding: "32px",
-        color: theme.palette.text.primary, // TODO: this jank
+        color: theme.palette.text.primary,
         width: "50%",
         minWidth: "300px",
         position: "relative",
         zIndex: "2",
         boxSizing: "border-box",
+        fontFamily: "inherit",
     },
     goodBoye: {
         width: "15%",
@@ -83,9 +88,11 @@ const styles = (theme) => ({
     bestBoye: {
         width: "100%",
         verticalAlign: "top",
+        borderRadius: "6.90px",
     },
     bestBoyeBox: {
-        border: "2px solid white",
+        border: "4px solid white",
+        borderRadius: "6.90px",
         padding: "0",
         width: "100%",
         display: "inline-block",
@@ -94,30 +101,45 @@ const styles = (theme) => ({
     },
     bestBoyeBorderRight: {
         position: "absolute",
-        border: "2px solid blue",
+        border: `4px solid ${theme.palette.text.title}`,
         width: "100%",
         height: "100%",
-        top: "2px",
+        top: "2.5px",
         left: "4px",
+        borderRadius: "6.90px",
     },
     bestBoyeBorderLeft: {
         position: "absolute",
-        border: "2px solid blue",
+        border: `4px solid ${theme.palette.text.title}`,
         width: "100%",
         height: "100%",
-        top: "2px",
-        left: "-8px",
+        top: "2.5px",
+        left: "-12px",
+        borderRadius: "6.90px",
     },
-    title: {
+    titleLeft: {
         color: theme.palette.text.title,
         padding: "8px",
+        paddingRight: "0",
+        fontFamily: "inherit",
+        fontWeight: "bold",
+    },
+    titleRight: {
+        color: theme.palette.text.title,
+        padding: "8px",
+        paddingLeft: "0",
+        fontFamily: "inherit",
+        fontWeight: "bold",
+    },
+    paragraph: {
+        fontFamily: "inherit",
     },
     body: {
         backgroundColor: theme.palette.background.default,
         maxWidth: "100vw",
         position: "relative",
         overflow: "hidden",
-        top: "100%"
+        top: "100%",
     },
     leftBox: {
         textAlign: "right",
@@ -184,10 +206,10 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                 <Box className={cn(classes.box0)}>
                     <Box className={cn(classes.blurBox)}></Box>
                     <Box className={cn(classes.box1,classes.leftBox)}>
-                        <Typography variant="h4" className={cn(classes.title)}>
+                        <Typography variant="h4" className={cn(classes.titleLeft)}>
                             ABOUT US
                         </Typography>
-                        <Typography>
+                        <Typography className={cn(classes.paragraph)}>
                             Love video games? Curious as to how they get made?
                             Then EGaDS is the club for you! We are a group of
                             interdisciplinary game development lovers; we want
@@ -221,10 +243,10 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                         </Box>
                     </Box>
                     <Box className={cn(classes.box1)}>
-                        <Typography variant="h4" className={cn(classes.title)}>
+                        <Typography variant="h4" className={cn(classes.titleRight)}>
                             WEEKLY MEETINGS
                         </Typography>
-                        <Typography>
+                        <Typography className={cn(classes.paragraph)}>
                             Tune in each week as numerous gaming professionals
                             stop by the GDC to share their stories of how they
                             made it, and the advice they have for those who are
@@ -241,10 +263,10 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                 <Box className={cn(classes.box0)}>
                     <Box className={cn(classes.blurBox)}></Box>
                     <Box className={cn(classes.box1,classes.leftBox)}>
-                        <Typography variant="h4" className={cn(classes.title)}>
+                        <Typography variant="h4" className={cn(classes.titleLeft)}>
                             WORKSHOPS
                         </Typography>
-                        <Typography>
+                        <Typography className={cn(classes.paragraph)}>
                             Led by EGaDS officers, students will get hands-on
                             experience in vital tools to game development such
                             as Unreal Blueprints, C# scripting for Unity, and
@@ -279,10 +301,10 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                             </Box>
                         </Box>
                     <Box className={cn(classes.box1)}>
-                        <Typography variant="h4" className={cn(classes.title)}>
+                        <Typography variant="h4" className={cn(classes.titleRight)}>
                             GAME JAMS
                         </Typography>
-                        <Typography>
+                        <Typography className={cn(classes.paragraph)}>
                             Throughout the academic year, EGaDs hosts game jams
                             such as the Global Game Jam and the UT Game Jame
                             where members have the chance to collaborate with
@@ -297,10 +319,10 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                 <Box className={cn(classes.box0)}>
                     <Box className={cn(classes.blurBox)}></Box>
                     <Box className={cn(classes.box1,classes.leftBox)}>
-                        <Typography variant="h4" className={cn(classes.title)}>
+                        <Typography variant="h4" className={cn(classes.titleLeft)}>
                             SOCIAL EVENTS
                         </Typography>
-                        <Typography>
+                        <Typography className={cn(classes.paragraph)}>
                             Members will have the opportunity to attend socials
                             to meet fellow developers. Professionals such as
                             artists, designers, programmers where you will have
