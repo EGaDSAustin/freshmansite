@@ -1,5 +1,5 @@
 # EGaDS Orientation Website
-- A simple side made for getting information to incoming students.
+- A simple site made for getting information to incoming students.
 
 ## Getting Started
 
