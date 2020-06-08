@@ -226,7 +226,7 @@ const styles = (theme) => ({
         borderRadius: "32px",
         padding: "16px",
         "&:hover": {
-            backgroundColor: "rgba(0,0,0,0.420)",
+            backgroundColor: "rgba(0,0,0,0.30)",
         },
     },
     inlineBlock: {
