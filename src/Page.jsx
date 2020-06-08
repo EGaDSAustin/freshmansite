@@ -1,5 +1,13 @@
 import React from "react";
-import { Typography, Button, Container, Paper, Box } from "@material-ui/core";
+import {
+    Typography,
+    Button,
+    Container,
+    Paper,
+    Box,
+    Icon,
+    Link,
+} from "@material-ui/core";
 import { withStyles } from "@material-ui/styles";
 import Header from "./components/Header.js";
 import cn from "classnames";
@@ -15,6 +23,11 @@ import gameJam2 from "./assets/photos/gamejam2.JPG";
 import gameJam3 from "./assets/photos/gamejam3.JPG";
 import tetris from "./assets/photos/tetris.JPG";
 import whale from "./assets/photos/whale.JPG";
+
+import FacebookIcon from "@material-ui/icons/Facebook";
+import TwitterIcon from "@material-ui/icons/Twitter";
+import MailIcon from "@material-ui/icons/Mail";
+import YouTubeIcon from "@material-ui/icons/YouTube";
 
 const styles = (theme) => ({
     root: {
@@ -59,6 +72,7 @@ const styles = (theme) => ({
     },
     footer: {
         backgroundColor: theme.palette.primary,
+        color: "#1296da",
     },
     box0: {
         display: "flex",
@@ -131,8 +145,21 @@ const styles = (theme) => ({
         fontFamily: "inherit",
         fontWeight: "bold",
     },
+    titleMiddle: {
+        color: theme.palette.text.title,
+        padding: "8px",
+        fontFamily: "inherit",
+        fontWeight: "bold",
+        textAlign: "center",
+    },
     paragraph: {
         fontFamily: "inherit",
+    },
+    link: {
+        fontFamily: "inherit",
+        color: theme.palette.text.title,
+        underline: "hover",
+        fontWeight: "bold",
     },
     body: {
         backgroundColor: theme.palette.background.default,
@@ -151,13 +178,13 @@ const styles = (theme) => ({
     },
     torus: {
         top: "10%",
-        left:"-33%",
+        left: "-33%",
         width: "60%",
     },
     twisty: {
         top: "-17%",
         right: "-27%",
-        width: "60%"
+        width: "60%",
     },
     sheets: {
         top: "60%",
@@ -184,7 +211,12 @@ const styles = (theme) => ({
         zIndex: "1",
         borderRadius: "8px",
         backdropFilter: "blur(4.20px)",
-        filter: "blur(0.69px)"
+        filter: "blur(0.69px)",
+    },
+    social: {
+        paddingLeft: "20px",
+        paddingRight: "20px",
+        color: "inherit",
     },
 });
 
@@ -197,7 +229,11 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                 <Box className={cn(classes.splashTextBox)}>
                     <Box className={cn(classes.blurBox)}></Box>
                     <Typography className={cn(classes.splashText)}>
-                        EGADS: At least we're not ACM.
+                        "Nobody in this industry knows what they're doing, we
+                        just have a gut assumption."
+                    </Typography>
+                    <Typography className={cn(classes.splashText)}>
+                        - Cliff Bleszinski
                     </Typography>
                 </Box>
             </Container>
@@ -205,8 +241,11 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
             <Container className={cn(classes.body)}>
                 <Box className={cn(classes.box0)}>
                     <Box className={cn(classes.blurBox)}></Box>
-                    <Box className={cn(classes.box1,classes.leftBox)}>
-                        <Typography variant="h4" className={cn(classes.titleLeft)}>
+                    <Box className={cn(classes.box1, classes.leftBox)}>
+                        <Typography
+                            variant="h4"
+                            className={cn(classes.titleLeft)}
+                        >
                             ABOUT US
                         </Typography>
                         <Typography className={cn(classes.paragraph)}>
@@ -225,7 +264,9 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                                 alt="a very good boye"
                                 className={cn(classes.bestBoye)}
                             />
-                            <div className={cn(classes.bestBoyeBorderRight)}></div>
+                            <div
+                                className={cn(classes.bestBoyeBorderRight)}
+                            ></div>
                         </Box>
                     </Box>
                 </Box>
@@ -239,11 +280,16 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                                 alt="a very good boye"
                                 className={cn(classes.bestBoye)}
                             />
-                            <div className={cn(classes.bestBoyeBorderLeft)}> </div>
+                            <div className={cn(classes.bestBoyeBorderLeft)}>
+                                {" "}
+                            </div>
                         </Box>
                     </Box>
                     <Box className={cn(classes.box1)}>
-                        <Typography variant="h4" className={cn(classes.titleRight)}>
+                        <Typography
+                            variant="h4"
+                            className={cn(classes.titleRight)}
+                        >
                             WEEKLY MEETINGS
                         </Typography>
                         <Typography className={cn(classes.paragraph)}>
@@ -262,8 +308,11 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
 
                 <Box className={cn(classes.box0)}>
                     <Box className={cn(classes.blurBox)}></Box>
-                    <Box className={cn(classes.box1,classes.leftBox)}>
-                        <Typography variant="h4" className={cn(classes.titleLeft)}>
+                    <Box className={cn(classes.box1, classes.leftBox)}>
+                        <Typography
+                            variant="h4"
+                            className={cn(classes.titleLeft)}
+                        >
                             WORKSHOPS
                         </Typography>
                         <Typography className={cn(classes.paragraph)}>
@@ -283,7 +332,9 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                                 alt="a very good boye"
                                 className={cn(classes.bestBoye)}
                             />
-                            <div className={cn(classes.bestBoyeBorderRight)}></div>
+                            <div
+                                className={cn(classes.bestBoyeBorderRight)}
+                            ></div>
                         </Box>
                     </Box>
                 </Box>
@@ -291,17 +342,22 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                 <Box className={cn(classes.box0)}>
                     <Box className={cn(classes.blurBox)}></Box>
                     <Box className={cn(classes.box1)}>
-                            <Box className={cn(classes.bestBoyeBox)}>
-                                <img
-                                    src={tetris}
-                                    alt="a very good boye"
-                                    className={cn(classes.bestBoye)}
-                                />
-                                <div className={cn(classes.bestBoyeBorderLeft)}></div>
-                            </Box>
+                        <Box className={cn(classes.bestBoyeBox)}>
+                            <img
+                                src={tetris}
+                                alt="a very good boye"
+                                className={cn(classes.bestBoye)}
+                            />
+                            <div
+                                className={cn(classes.bestBoyeBorderLeft)}
+                            ></div>
                         </Box>
+                    </Box>
                     <Box className={cn(classes.box1)}>
-                        <Typography variant="h4" className={cn(classes.titleRight)}>
+                        <Typography
+                            variant="h4"
+                            className={cn(classes.titleRight)}
+                        >
                             GAME JAMS
                         </Typography>
                         <Typography className={cn(classes.paragraph)}>
@@ -318,8 +374,11 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
 
                 <Box className={cn(classes.box0)}>
                     <Box className={cn(classes.blurBox)}></Box>
-                    <Box className={cn(classes.box1,classes.leftBox)}>
-                        <Typography variant="h4" className={cn(classes.titleLeft)}>
+                    <Box className={cn(classes.box1, classes.leftBox)}>
+                        <Typography
+                            variant="h4"
+                            className={cn(classes.titleLeft)}
+                        >
                             SOCIAL EVENTS
                         </Typography>
                         <Typography className={cn(classes.paragraph)}>
@@ -338,38 +397,139 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                                 alt="a very good boye"
                                 className={cn(classes.bestBoye)}
                             />
-                            <div className={cn(classes.bestBoyeBorderRight)}></div>
+                            <div
+                                className={cn(classes.bestBoyeBorderRight)}
+                            ></div>
                         </Box>
+                    </Box>
+                </Box>
+                <Typography variant="h4" className={cn(classes.titleMiddle)}>
+                    CONNECT WITH US
+                </Typography>
+
+                <Box className={cn(classes.box0)}>
+                    <Box className={cn(classes.blurBox)}></Box>
+
+                    <Box className={cn(classes.box1)}>
+                        <Typography
+                            variant="h4"
+                            className={cn(classes.titleRight)}
+                        >
+                            GAMES
+                        </Typography>
+                        <Typography className={cn(classes.paragraph)}>
+                            A variety of games made by EGaDS members during past
+                            game jams are all hosted on our itch.io page! The
+                            pages include in-depth information about each game,
+                            as well as download links to run the games yourself.
+                        </Typography>
+                        <br />
+                        <Typography className={cn(classes.paragraph)}>
+                            <Link
+                                href="https://itch.io/c/737435/games-by-egads-members"
+                                target="_blank"
+                                rel="noopener"
+                                className={cn(classes.link)}
+                            >
+                                Check out all the games here!
+                            </Link>
+                        </Typography>
+                    </Box>
+
+                    <Box className={cn(classes.box1)}>
+                        <Typography
+                            variant="h4"
+                            className={cn(classes.titleRight)}
+                        >
+                            SOCIALS
+                        </Typography>
+
+                        <Typography
+                            className={cn(
+                                classes.paragraph,
+                                classes.titleMiddle
+                            )}
+                            variant="h6"
+                        >
+                            <Link
+                                href="https://www.google.com/url?q=http://bit.ly/EGaDSDiscord&sa=D&ust=1591615847572000&usg=AFQjCNFNjKiWjcVyumbfdN1IR2A_c1m55g"
+                                target="_blank"
+                                rel="noopener"
+                                className={cn(classes.link)}
+                            >
+                                Join our Discord!
+                            </Link>
+                        </Typography>
+                        <br />
+
+                        <Typography
+                            className={cn(classes.paragraph)}
+                            align="center"
+                        >
+                            <Link
+                                href="https://facebook.us16.list-manage.com/subscribe?u=91470f849ef822234cb47861a&id=34673605c6"
+                                target="_blank"
+                                rel="noopener"
+                                className={cn(classes.social)}
+                            >
+                                <MailIcon fontSize="large" />
+                            </Link>
+                            <Link
+                                href="https://twitter.com/EGaDSAustin"
+                                target="_blank"
+                                rel="noopener"
+                                className={cn(classes.social)}
+                            >
+                                <TwitterIcon fontSize="large" />
+                            </Link>
+
+                            <Link
+                                href="https://www.facebook.com/groups/egadsaustin"
+                                target="_blank"
+                                rel="noopener"
+                                className={cn(classes.social)}
+                            >
+                                <FacebookIcon fontSize="large" />
+                            </Link>
+                            <Link
+                                href="https://www.youtube.com/user/egadsaustin"
+                                target="_blank"
+                                rel="noopener"
+                                className={cn(classes.social)}
+                            >
+                                <YouTubeIcon fontSize="large" />
+                            </Link>
+                        </Typography>
                     </Box>
                 </Box>
 
                 <img
-                src={torus}
-                alt="torus"
-                className={cn(classes.shape,classes.torus)}
+                    src={torus}
+                    alt="torus"
+                    className={cn(classes.shape, classes.torus)}
                 />
                 <img
-                src={twisty}
-                alt="twisty"
-                className={cn(classes.shape,classes.twisty)}
+                    src={twisty}
+                    alt="twisty"
+                    className={cn(classes.shape, classes.twisty)}
                 />
                 <img
-                src={sheets}
-                alt="sheets"
-                className={cn(classes.shape,classes.sheets)}
+                    src={sheets}
+                    alt="sheets"
+                    className={cn(classes.shape, classes.sheets)}
                 />
                 <img
-                src={hole}
-                alt="hole"
-                className={cn(classes.shape,classes.hole)}
+                    src={hole}
+                    alt="hole"
+                    className={cn(classes.shape, classes.hole)}
                 />
                 <img
-                src={ball}
-                alt="ball"
-                className={cn(classes.shape,classes.ball)}
+                    src={ball}
+                    alt="ball"
+                    className={cn(classes.shape, classes.ball)}
                 />
             </Container>
-            
+
             <Container className={cn(classes.footer)}>
                 <Typography>welcome to stinky feetgads</Typography>
                 <img
