@@ -95,9 +95,8 @@ const styles = (theme) => ({
         fontFamily: "inherit",
     },
     goodBoye: {
-        width: "15%",
+        width: "100%",
         position: "relative",
-        left: "42.5%",
     },
     bestBoye: {
         width: "100%",
@@ -112,6 +111,12 @@ const styles = (theme) => ({
         display: "inline-block",
         margin: "auto",
         position: "relative",
+    },
+    boxShadowLeft: {
+        boxShadow: "-8px 8px 4px rgba(0,0,0,0.3)",
+    },
+    boxShadowRight: {
+        boxShadow: "8px 8px 4px rgba(0,0,0,0.3)",
     },
     bestBoyeBorderRight: {
         position: "absolute",
@@ -137,6 +142,7 @@ const styles = (theme) => ({
         paddingRight: "0",
         fontFamily: "inherit",
         fontWeight: "bold",
+        textShadow: "-1px 2px 1px rgba(0,0,0,0.3)",
     },
     titleRight: {
         color: theme.palette.text.title,
@@ -144,6 +150,7 @@ const styles = (theme) => ({
         paddingLeft: "0",
         fontFamily: "inherit",
         fontWeight: "bold",
+        textShadow: "1px 2px 1px rgba(0,0,0,0.3)",
     },
     titleMiddle: {
         color: theme.palette.text.title,
@@ -151,6 +158,7 @@ const styles = (theme) => ({
         fontFamily: "inherit",
         fontWeight: "bold",
         textAlign: "center",
+        textShadow: "0px 2px 1px rgba(0,0,0,0.3)",
     },
     paragraph: {
         fontFamily: "inherit",
@@ -170,6 +178,15 @@ const styles = (theme) => ({
     },
     leftBox: {
         textAlign: "right",
+        textShadow: "-1px 2px 1px rgba(0,0,0,0.3)",
+    },
+    rightBox: {
+        textAlign: "left",
+        textShadow: "1px 2px 1px rgba(0,0,0,0.3)",
+    },
+    centerBox: {
+        textAlign: "center",
+        textShadow: "0px 2px 1px rgba(0,0,0,0.3)",
     },
     shape: {
         position: "absolute",
@@ -234,6 +251,12 @@ const styles = (theme) => ({
     },
     lessTopPadding: {
         paddingTop: "8px",
+    },
+    heWoof: {
+        width: "15%",
+        "&:hover": {
+            color: "black",
+        },
     }
 });
 
@@ -275,7 +298,7 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                         </Typography>
                     </Box>
                     <Box className={cn(classes.box1)}>
-                        <Box className={cn(classes.bestBoyeBox)}>
+                        <Box className={cn(classes.bestBoyeBox,classes.boxShadowRight)}>
                             <img
                                 src={gameJam1}
                                 alt="a very good boye"
@@ -291,7 +314,7 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                 <Box className={cn(classes.box0)}>
                     <Box className={cn(classes.blurBox)}></Box>
                     <Box className={cn(classes.box1)}>
-                        <Box className={cn(classes.bestBoyeBox)}>
+                        <Box className={cn(classes.bestBoyeBox,classes.boxShadowLeft)}>
                             <img
                                 src={gameJam2}
                                 alt="a very good boye"
@@ -302,7 +325,7 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                             </div>
                         </Box>
                     </Box>
-                    <Box className={cn(classes.box1)}>
+                    <Box className={cn(classes.box1,classes.rightBox)}>
                         <Typography
                             variant="h4"
                             className={cn(classes.titleRight)}
@@ -343,7 +366,7 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                         </Typography>
                     </Box>
                     <Box className={cn(classes.box1)}>
-                        <Box className={cn(classes.bestBoyeBox)}>
+                        <Box className={cn(classes.bestBoyeBox,classes.boxShadowRight)}>
                             <img
                                 src={gameJam3}
                                 alt="a very good boye"
@@ -359,7 +382,7 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                 <Box className={cn(classes.box0)}>
                     <Box className={cn(classes.blurBox)}></Box>
                     <Box className={cn(classes.box1)}>
-                        <Box className={cn(classes.bestBoyeBox)}>
+                        <Box className={cn(classes.bestBoyeBox,classes.boxShadowLeft)}>
                             <img
                                 src={tetris}
                                 alt="a very good boye"
@@ -370,7 +393,7 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                             ></div>
                         </Box>
                     </Box>
-                    <Box className={cn(classes.box1)}>
+                    <Box className={cn(classes.box1,classes.rightBox)}>
                         <Typography
                             variant="h4"
                             className={cn(classes.titleRight)}
@@ -408,7 +431,7 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                         </Typography>
                     </Box>
                     <Box className={cn(classes.box1)}>
-                        <Box className={cn(classes.bestBoyeBox)}>
+                        <Box className={cn(classes.bestBoyeBox,classes.boxShadowRight)}>
                             <img
                                 src={whale}
                                 alt="a very good boye"
@@ -427,7 +450,7 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                 <Box className={cn(classes.box0,classes.connectBox)}>
                     <Box className={cn(classes.blurBox)}></Box>
 
-                    <Box className={cn(classes.box1)}>
+                    <Box className={cn(classes.box1,classes.centerBox)}>
                         <Typography
                             variant="h4"
                             className={cn(classes.titleMiddle)}
@@ -443,7 +466,7 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                         </Typography>
                         <br />
                         <Box className={cn(classes.transparentBox)}>
-                            <Typography align="center" className={cn(classes.paragraph)}>
+                            <Typography className={cn(classes.paragraph,classes.titleMiddle)}>
                                 <Link
                                     href="https://itch.io/c/737435/games-by-egads-members"
                                     target="_blank"
@@ -456,7 +479,7 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                         </Box>
                     </Box>
 
-                    <Box align="center" className={cn(classes.box1)}>
+                    <Box className={cn(classes.box1,classes.centerBox)}>
                         <Typography
                             variant="h4"
                             className={cn(classes.titleMiddle)}
@@ -484,7 +507,7 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                             <br />
 
                             <Typography
-                                className={cn(classes.paragraph)}
+                                className={cn(classes.paragraph,classes)}
                                 align="center"
                             >
                                 <Link
@@ -552,13 +575,15 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                 />
             </Container>
 
-            <Container className={cn(classes.footer)}>
-                <Typography>welcome to stinky feetgads</Typography>
-                <img
-                    src={goodboye}
-                    alt="a very good boye"
-                    className={cn(classes.goodBoye)}
-                />
+            <Container align="center" className={cn(classes.footer)}>
+                <div className={cn(classes.inlineBlock,classes.heWoof)}>
+                    <Typography align="center">woof</Typography>
+                    <img
+                        src={goodboye}
+                        alt="a very good boye"
+                        className={cn(classes.goodBoye)}
+                    />
+                </div>
             </Container>
         </div>
     );
