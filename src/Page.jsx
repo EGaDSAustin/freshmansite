@@ -49,8 +49,8 @@ const styles = (theme) => ({
         zIndex: "2",
         fontFamily: "inherit",
         fontWeight: "bold",
-        letterSpacing: "0.15em",
-        paddingLeft: "0.15em",
+        letterSpacing: "0.069em",
+        paddingLeft: "0.069em",
     },
     splashTextBox: {
         position: "absolute",
@@ -218,6 +218,23 @@ const styles = (theme) => ({
         paddingRight: "20px",
         color: "inherit",
     },
+    connectBox: {
+        alignItems: "normal",
+    },
+    transparentBox: {
+        backgroundColor: "rgba(0,0,0,0.2)",
+        borderRadius: "32px",
+        padding: "16px",
+        "&:hover": {
+            backgroundColor: "rgba(0,0,0,0.420)",
+        },
+    },
+    inlineBlock: {
+        display: "inline-block",
+    },
+    lessTopPadding: {
+        paddingTop: "8px",
+    }
 });
 
 const Page = ({ classes, rootClassName, className, ...props }) => {
@@ -407,99 +424,104 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                     CONNECT WITH US
                 </Typography>
 
-                <Box className={cn(classes.box0)}>
+                <Box className={cn(classes.box0,classes.connectBox)}>
                     <Box className={cn(classes.blurBox)}></Box>
 
                     <Box className={cn(classes.box1)}>
                         <Typography
                             variant="h4"
-                            className={cn(classes.titleRight)}
+                            className={cn(classes.titleMiddle)}
                         >
                             GAMES
                         </Typography>
-                        <Typography className={cn(classes.paragraph)}>
+                        
+                        <Typography align="center" className={cn(classes.paragraph)}>
                             A variety of games made by EGaDS members during past
                             game jams are all hosted on our itch.io page! The
                             pages include in-depth information about each game,
                             as well as download links to run the games yourself.
                         </Typography>
                         <br />
-                        <Typography className={cn(classes.paragraph)}>
-                            <Link
-                                href="https://itch.io/c/737435/games-by-egads-members"
-                                target="_blank"
-                                rel="noopener"
-                                className={cn(classes.link)}
-                            >
-                                Check out all the games here!
-                            </Link>
-                        </Typography>
+                        <Box className={cn(classes.transparentBox)}>
+                            <Typography align="center" className={cn(classes.paragraph)}>
+                                <Link
+                                    href="https://itch.io/c/737435/games-by-egads-members"
+                                    target="_blank"
+                                    rel="noopener"
+                                    className={cn(classes.link)}
+                                >
+                                    Check out all the games here!
+                                </Link>
+                            </Typography>
+                        </Box>
                     </Box>
 
-                    <Box className={cn(classes.box1)}>
+                    <Box align="center" className={cn(classes.box1)}>
                         <Typography
                             variant="h4"
-                            className={cn(classes.titleRight)}
+                            className={cn(classes.titleMiddle)}
                         >
                             SOCIALS
                         </Typography>
 
-                        <Typography
-                            className={cn(
-                                classes.paragraph,
-                                classes.titleMiddle
-                            )}
-                            variant="h6"
-                        >
-                            <Link
-                                href="https://www.google.com/url?q=http://bit.ly/EGaDSDiscord&sa=D&ust=1591615847572000&usg=AFQjCNFNjKiWjcVyumbfdN1IR2A_c1m55g"
-                                target="_blank"
-                                rel="noopener"
-                                className={cn(classes.link)}
+                        <Box className={cn(classes.transparentBox,classes.lessTopPadding,classes.inlineBlock)}>
+                            <Typography
+                                className={cn(
+                                    classes.paragraph,
+                                    classes.titleMiddle
+                                )}
+                                variant="h6"
                             >
-                                Join our Discord!
-                            </Link>
-                        </Typography>
-                        <br />
+                                <Link
+                                    href="https://www.google.com/url?q=http://bit.ly/EGaDSDiscord&sa=D&ust=1591615847572000&usg=AFQjCNFNjKiWjcVyumbfdN1IR2A_c1m55g"
+                                    target="_blank"
+                                    rel="noopener"
+                                    className={cn(classes.link)}
+                                >
+                                    Join our Discord!
+                                </Link>
+                            </Typography>
+                            <br />
 
-                        <Typography
-                            className={cn(classes.paragraph)}
-                            align="center"
-                        >
-                            <Link
-                                href="https://facebook.us16.list-manage.com/subscribe?u=91470f849ef822234cb47861a&id=34673605c6"
-                                target="_blank"
-                                rel="noopener"
-                                className={cn(classes.social)}
+                            <Typography
+                                className={cn(classes.paragraph)}
+                                align="center"
                             >
-                                <MailIcon fontSize="large" />
-                            </Link>
-                            <Link
-                                href="https://twitter.com/EGaDSAustin"
-                                target="_blank"
-                                rel="noopener"
-                                className={cn(classes.social)}
-                            >
-                                <TwitterIcon fontSize="large" />
-                            </Link>
+                                <Link
+                                    href="https://facebook.us16.list-manage.com/subscribe?u=91470f849ef822234cb47861a&id=34673605c6"
+                                    target="_blank"
+                                    rel="noopener"
+                                    className={cn(classes.social)}
+                                >
+                                    <MailIcon fontSize="large" />
+                                </Link>
+                                <Link
+                                    href="https://twitter.com/EGaDSAustin"
+                                    target="_blank"
+                                    rel="noopener"
+                                    className={cn(classes.social)}
+                                >
+                                    <TwitterIcon fontSize="large" />
+                                </Link>
 
-                            <Link
-                                href="https://www.facebook.com/groups/egadsaustin"
-                                target="_blank"
-                                rel="noopener"
-                                className={cn(classes.social)}
-                            >
-                                <FacebookIcon fontSize="large" />
-                            </Link>
-                            <Link
-                                href="https://www.youtube.com/user/egadsaustin"
-                                target="_blank"
-                                rel="noopener"
-                                className={cn(classes.social)}
-                            >
-                                <YouTubeIcon fontSize="large" />
-                            </Link>
-                        </Typography>
+                                <Link
+                                    href="https://www.facebook.com/groups/egadsaustin"
+                                    target="_blank"
+                                    rel="noopener"
+                                    className={cn(classes.social)}
+                                >
+                                    <FacebookIcon fontSize="large" />
+                                </Link>
+                                <Link
+                                    href="https://www.youtube.com/user/egadsaustin"
+                                    target="_blank"
+                                    rel="noopener"
+                                    className={cn(classes.social)}
+                                >
+                                    <YouTubeIcon fontSize="large" />
+                                </Link>
+                            </Typography>
+                        </Box>
                     </Box>
                 </Box>
 
