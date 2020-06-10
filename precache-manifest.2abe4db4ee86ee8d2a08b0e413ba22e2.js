@@ -1,27 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "52e8ce412e0aeb7f1a741e1eaa1e8847",
+    "revision": "9594727ad92811cf44a0ed04b5084296",
     "url": "/freshmansite/index.html"
   },
   {
-    "revision": "f65243f04eaaa3cc9136",
+    "revision": "00bb12256a5d66f53809",
     "url": "/freshmansite/static/css/main.a2a89af3.chunk.css"
   },
   {
-    "revision": "43ba64e5ed02cf2824c0",
-    "url": "/freshmansite/static/js/2.c37bce6d.chunk.js"
+    "revision": "a1227c19bbfd3e1195d8",
+    "url": "/freshmansite/static/js/2.21d6b286.chunk.js"
   },
   {
     "revision": "5e9b6f5c16b720e8a86875f97734673e",
-    "url": "/freshmansite/static/js/2.c37bce6d.chunk.js.LICENSE.txt"
+    "url": "/freshmansite/static/js/2.21d6b286.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f65243f04eaaa3cc9136",
-    "url": "/freshmansite/static/js/main.b8205f8a.chunk.js"
+    "revision": "00bb12256a5d66f53809",
+    "url": "/freshmansite/static/js/main.975d4c36.chunk.js"
   },
   {
     "revision": "0abcc5c3b0a0fd42b3e8",
     "url": "/freshmansite/static/js/runtime-main.763c1931.js"
+  },
+  {
+    "revision": "1c8a54f25d101bdc607cec7228247a9a",
+    "url": "/freshmansite/static/media/Discord-Logo-White.1c8a54f2.svg"
   },
   {
     "revision": "93bf9b4db74c47f60e87947d92c94ace",
