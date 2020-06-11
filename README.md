@@ -36,6 +36,6 @@ npm run deploy
 - Robert Guan
 - Ali Kedwaii
 - Colette Montminy
-- Virad
-- Vincent
+- Varad Thorat
+- Vincent Huynh
 - Terry
