@@ -46,10 +46,14 @@ const EGaDSTheme = createMuiTheme({
         },
     },
     overrides: {
-        MuiButton: {},
+        MuiButton: {
+            root: {
+                fontFamily: "inherit",
+            },
+        },
         MuiAppBar: {
             colorPrimary: {
-                backgroundColor: "rgba(0,0,0,.4)",
+                backgroundColor: "rgb(24,24,24)",
             },
         },
     },
