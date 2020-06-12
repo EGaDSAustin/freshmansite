@@ -1,6 +1,16 @@
 import React from "react";
-import { Typography, Container, Box, Link, SvgIcon } from "@material-ui/core";
+import {
+    Typography,
+    Button,
+    Container,
+    Paper,
+    Box,
+    Icon,
+    Link,
+    SvgIcon,
+} from "@material-ui/core";
 import { withStyles } from "@material-ui/styles";
+import Header from "./components/Header.js";
 import cn from "classnames";
 import goodboye from "./goodboye.png";
 import splash from "./assets/photos/carmen.jpg";
@@ -265,6 +275,8 @@ const styles = (theme) => ({
 const Page = ({ classes, rootClassName, className, ...props }) => {
     return (
         <div className={cn(classes.root, rootClassName, className)}>
+            <Header position="sticky" />
+
             <Container className={cn(classes.splash)}>
                 <Box className={cn(classes.splashTextBox)}>
                     <Box className={cn(classes.blurBox)}></Box>
@@ -278,7 +290,7 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                 </Box>
             </Container>
 
-            <Container className={cn(classes.body)} id="info">
+            <Container className={cn(classes.body)}>
                 <Box className={cn(classes.box0)}>
                     <Box className={cn(classes.blurBox)}></Box>
                     <Box className={cn(classes.box1, classes.leftBox)}>
@@ -512,10 +524,7 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                         </Box>
                     </Box>
 
-                    <Box
-                        className={cn(classes.box1, classes.centerBox)}
-                        id="socialMedia"
-                    >
+                    <Box className={cn(classes.box1, classes.centerBox)}>
                         <Typography
                             variant="h4"
                             className={cn(classes.titleMiddle)}

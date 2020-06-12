@@ -1,13 +1,13 @@
 import React from "react";
 import EGaDSTheme from "./Theme";
 import { ThemeProvider } from "@material-ui/styles";
-import SiteRouter from "./Routes";
+import Page from "./Page.jsx";
 
 function App() {
     return (
         <ThemeProvider theme={EGaDSTheme}>
             <div className="App">
-                <SiteRouter />
+                <Page />
             </div>
         </ThemeProvider>
     );
