@@ -37,6 +37,7 @@ const EGaDSTheme = createMuiTheme({
             secondary: "rgba(204, 204, 204, 0.54)",
             disabled: "rgba(134, 113, 113, 0.38)",
             hint: "rgba(233, 202, 243, 1)",
+            title: "rgba(19, 166, 240, 1)",
         },
         gradient: {
             primary: "rgb(15,8,18)",

@@ -11,7 +11,7 @@ import {
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import cn from "classnames";
 import logo from "../egadscontroller2.png";
-// import "../index.css";
+// import "../index.css";\
 
 const styles = {
     root: {},
@@ -34,14 +34,17 @@ const styles = {
         maxWidth: "calc(50% - 60px)",
         fontFamily: "ElectricBoots",
     },
+    bar: {
+        padding: "16px",
+    },
 };
 
 const Header = ({ classes, position, ...props }) => {
     return (
         <AppBar position={position}>
-            <Toolbar>
+            <Toolbar className={cn(classes.bar)}>
                 <Typography variant="h4" className={cn(classes.title)}>
-                    electronic ganime developers society
+                    electronic game developers society
                 </Typography>
                 <div className={cn(classes.grow)} />
                 <div className={cn(classes.logo)}>
@@ -57,8 +60,8 @@ const Header = ({ classes, position, ...props }) => {
                 <div className={cn(classes.grow)} />
                 <div className={cn(classes.grow)} />
 
-                <Button> info </Button>
-                <div className={cn(classes.grow)} />
+                {/* <Button> info </Button>
+                <div className={cn(classes.grow)} onClick={executeScroll} />
                 <Button> bug </Button>
                 <div className={cn(classes.grow)} />
                 <IconButton
@@ -68,7 +71,7 @@ const Header = ({ classes, position, ...props }) => {
                     aria-label="menu"
                 >
                     <MoreHorizIcon />
-                </IconButton>
+                </IconButton> */}
             </Toolbar>
         </AppBar>
     );
