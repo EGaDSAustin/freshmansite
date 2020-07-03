@@ -97,6 +97,16 @@ const styles = (theme) => ({
         boxSizing: "border-box",
         fontFamily: "inherit",
     },
+    topbox: {
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "90%",
+        padding: "22px",
+        margin: "16px auto",
+        position: "relative",
+    },
     goodBoye: {
         width: "100%",
         position: "relative",
@@ -165,6 +175,15 @@ const styles = (theme) => ({
     },
     paragraph: {
         fontFamily: "inherit",
+    },
+    announcement: {
+        fontFamily: "inherit",
+        padding: "8px",
+    },
+    fuckit: {
+        fontFamily: "inherit",
+        paddingTop: "40px",
+        paddingBottom: "40px",
     },
     link: {
         fontFamily: "inherit",
@@ -249,6 +268,18 @@ const styles = (theme) => ({
             backgroundColor: "rgba(0,0,0,0.30)",
         },
     },
+    announcementLink: {
+        backgroundColor: "rgba(0,0,0,0.2)",
+        borderRadius: "32px",
+        padding: "16px",
+        marginLeft: "80px",
+        marginRight: "80px",
+        marginTop: "20px",
+        width: "200px",
+        "&:hover": {
+            backgroundColor: "rgba(0,0,0,0.30)",
+        },
+    },
     inlineBlock: {
         display: "inline-block",
     },
@@ -291,6 +322,123 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
             </Container>
 
             <Container className={cn(classes.body)}>
+                <Box className={cn(classes.box0, classes.connectBox)}>
+                    <Box className={cn(classes.blurBox)}></Box>
+
+                    <Box className={cn(classes.box1, classes.topbox)}>
+                        <Typography
+                            variant="h4"
+                            className={cn(classes.titleMiddle)}
+                        >
+                            BLACK LIVES MATTER GAME JAM
+                        </Typography>
+
+                        <Typography
+                            align="left"
+                            className={cn(classes.announcement)}
+                        >
+                            We're excited to announce that EGaDS! will be
+                            hosting an online
+                            <b> Black Lives Matter Game Jam </b>
+                            on behalf of UT's Game Development and Design (GDAD)
+                            program. This event focuses on promoting{" "}
+                            <u>racial diversity, justice, and equality.</u>
+                        </Typography>
+                        <Typography
+                            align="left"
+                            className={cn(classes.announcement)}
+                        >
+                            GDAD'S goal for the game jam is to take action and
+                            bring awareness to the Black Lives Matter movement.
+                            We believe now more than ever that this generation
+                            of creators believes in equality and racial justice.
+                            GDAD'S hopes to inspire others to promote these
+                            beliefs while using games as a platform to do so.
+                        </Typography>
+                        <Typography
+                            align="left"
+                            className={cn(classes.announcement)}
+                        >
+                            Moreover, this is also a great opportunity for
+                            students with a passion for game development from
+                            different disciplines to come together and make a
+                            game over the course of <b>66 hours!</b>
+                        </Typography>
+                        <Typography
+                            align="left"
+                            className={cn(classes.announcement)}
+                        >
+                            The game jam will have multiple themes and is meant
+                            to be a casual jam where we can all work towards a
+                            project we're proud of! It will take place from
+                            <b> Thursday, July 16th at 6pm</b> to
+                            <b> Sunday, July 19th at 12pm. </b>
+                            <u>No experience is necessary</u> in order to
+                            participate, anyone is welcome to join! Hope to see
+                            you there!
+                        </Typography>
+
+                        <Typography
+                            align="center"
+                            className={cn(classes.fuckit)}
+                        >
+                            <b>
+                                If you're interested in participating please
+                                fill out the form below by using your utexas
+                                email and by joining the BLM Game Jam Discord
+                                server!
+                            </b>
+                        </Typography>
+
+                        <Box
+                            className={cn(
+                                classes.announcementLink,
+                                classes.lessTopPadding,
+                                classes.inlineBlock
+                            )}
+                        >
+                            <Typography
+                                className={cn(
+                                    classes.paragraph,
+                                    classes.titleMiddle
+                                )}
+                            >
+                                <Link
+                                    href="https://forms.gle/KPBKeAVV5txFu6en9"
+                                    target="_blank"
+                                    rel="noopener"
+                                    className={cn(classes.link)}
+                                >
+                                    Sign up here!
+                                </Link>
+                            </Typography>
+                        </Box>
+                        <Box
+                            className={cn(
+                                classes.announcementLink,
+                                classes.lessTopPadding,
+                                classes.inlineBlock
+                            )}
+                        >
+                            <Typography
+                                className={cn(
+                                    classes.paragraph,
+                                    classes.titleMiddle
+                                )}
+                            >
+                                <Link
+                                    href="https://discord.gg/crczUcm"
+                                    target="_blank"
+                                    rel="noopener"
+                                    className={cn(classes.link)}
+                                >
+                                    Join the Discord!
+                                </Link>
+                            </Typography>
+                        </Box>
+                    </Box>
+                </Box>
+
                 <Box className={cn(classes.box0)}>
                     <Box className={cn(classes.blurBox)}></Box>
                     <Box className={cn(classes.box1, classes.leftBox)}>
@@ -480,6 +628,7 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                         </Box>
                     </Box>
                 </Box>
+
                 <Typography variant="h4" className={cn(classes.titleMiddle)}>
                     CONNECT WITH US
                 </Typography>
