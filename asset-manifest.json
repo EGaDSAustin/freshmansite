@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/freshmansite/static/css/main.a2a89af3.chunk.css",
-    "main.js": "/freshmansite/static/js/main.975d4c36.chunk.js",
-    "main.js.map": "/freshmansite/static/js/main.975d4c36.chunk.js.map",
+    "main.js": "/freshmansite/static/js/main.ba890a68.chunk.js",
+    "main.js.map": "/freshmansite/static/js/main.ba890a68.chunk.js.map",
     "runtime-main.js": "/freshmansite/static/js/runtime-main.763c1931.js",
     "runtime-main.js.map": "/freshmansite/static/js/runtime-main.763c1931.js.map",
-    "static/js/2.21d6b286.chunk.js": "/freshmansite/static/js/2.21d6b286.chunk.js",
-    "static/js/2.21d6b286.chunk.js.map": "/freshmansite/static/js/2.21d6b286.chunk.js.map",
+    "static/js/2.62048700.chunk.js": "/freshmansite/static/js/2.62048700.chunk.js",
+    "static/js/2.62048700.chunk.js.map": "/freshmansite/static/js/2.62048700.chunk.js.map",
     "index.html": "/freshmansite/index.html",
-    "precache-manifest.2abe4db4ee86ee8d2a08b0e413ba22e2.js": "/freshmansite/precache-manifest.2abe4db4ee86ee8d2a08b0e413ba22e2.js",
+    "precache-manifest.85e26c1a91ddb31c9e25cab4b3783204.js": "/freshmansite/precache-manifest.85e26c1a91ddb31c9e25cab4b3783204.js",
     "service-worker.js": "/freshmansite/service-worker.js",
     "static/css/main.a2a89af3.chunk.css.map": "/freshmansite/static/css/main.a2a89af3.chunk.css.map",
-    "static/js/2.21d6b286.chunk.js.LICENSE.txt": "/freshmansite/static/js/2.21d6b286.chunk.js.LICENSE.txt",
-    "static/media/Discord-Logo-White.1c8a54f2.svg": "/freshmansite/static/media/Discord-Logo-White.1c8a54f2.svg",
+    "static/js/2.62048700.chunk.js.LICENSE.txt": "/freshmansite/static/js/2.62048700.chunk.js.LICENSE.txt",
+    "static/media/Discord-Logo-White.5e23c112.svg": "/freshmansite/static/media/Discord-Logo-White.5e23c112.svg",
     "static/media/index.css": "/freshmansite/static/media/KotoriRose-Regular.e09dfb5b.otf",
     "static/media/blueshape1.png": "/freshmansite/static/media/blueshape1.8aea6d38.png",
     "static/media/blueshape2.png": "/freshmansite/static/media/blueshape2.ec84ed01.png",
@@ -30,8 +30,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.763c1931.js",
-    "static/js/2.21d6b286.chunk.js",
+    "static/js/2.62048700.chunk.js",
     "static/css/main.a2a89af3.chunk.css",
-    "static/js/main.975d4c36.chunk.js"
+    "static/js/main.ba890a68.chunk.js"
   ]
 }
