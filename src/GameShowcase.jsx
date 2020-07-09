@@ -261,18 +261,14 @@ const styles = (theme) => ({
     },
 });
 
-const Page = ({ classes, rootClassName, className, ...props }) => {
+const GameShowcase = ({ classes, rootClassName, className, ...props }) => {
     return (
         <div className={cn(classes.root, rootClassName, className)}>
             <Container className={cn(classes.splash)}>
                 <Box className={cn(classes.splashTextBox)}>
                     <Box className={cn(classes.blurBox)}></Box>
                     <Typography className={cn(classes.splashText)}>
-                        "Nobody in this industry knows what they're doing, we
-                        just have a gut assumption."
-                    </Typography>
-                    <Typography className={cn(classes.splashText)}>
-                        - Cliff Bleszinski
+                        EGaDS! Game Showcase
                     </Typography>
                 </Box>
             </Container>
@@ -280,38 +276,24 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
             <Container className={cn(classes.body)} id="info">
                 <Box className={cn(classes.box0)}>
                     <Box className={cn(classes.blurBox)}></Box>
-                    <Box className={cn(classes.box1, classes.leftBox)}>
+                    <Box className={cn(classes.box1)}>
                         <Typography
                             variant="h4"
-                            className={cn(classes.titleLeft)}
+                            className={cn(classes.titleMiddle)}
                         >
-                            ABOUT US
+                            GAMES
                         </Typography>
                         <Typography className={cn(classes.paragraph)}>
-                            Love video games? Curious as to how they get made?
-                            Then EGaDS is the club for you! We are a group of
-                            interdisciplinary game development lovers; we want
-                            to give you a peek behind the curtain as to how they
-                            are created, and give you the skills and confidence
-                            to begin creating your own.
+                            EGaDS! members make some omega cute video games blah 
+                            blah blah blah blah blahblah blah blahblah blah 
+                            blahblah blah blahblah blah blah 
+                            EGaDS! members make some omega cute video games blah 
+                            blah blah blah blah blahblah blah blahblah blah 
+                            blahblah blah blahblah blah blah
+                            EGaDS! members make some omega cute video games blah 
+                            blah blah blah blah blahblah blah blahblah blah 
+                            blahblah blah blahblah blah blah
                         </Typography>
-                    </Box>
-                    <Box className={cn(classes.box1)}>
-                        <Box
-                            className={cn(
-                                classes.bestBoyeBox,
-                                classes.boxShadowRight
-                            )}
-                        >
-                            <img
-                                src={gameJam1}
-                                alt="a very good boye"
-                                className={cn(classes.bestBoye)}
-                            />
-                            <div
-                                className={cn(classes.bestBoyeBorderRight)}
-                            ></div>
-                        </Box>
                     </Box>
                 </Box>
 
@@ -624,4 +606,4 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
     );
 };
 
-export default withStyles(styles)(Page);
+export default withStyles(styles)(GameShowcase);
