@@ -2,18 +2,21 @@ import React from "react";
 import { Typography, Container, Box, Link, SvgIcon } from "@material-ui/core";
 import { withStyles } from "@material-ui/styles";
 import cn from "classnames";
+
 import goodboye from "./goodboye.png";
 import splash from "./assets/photos/carmen.jpg";
+
 import torus from "./assets/blueshape1.png";
 import twisty from "./assets/blueshape3.png";
 import sheets from "./assets/blueshape2.png";
 import hole from "./assets/blueshape5.png";
 import ball from "./assets/blueshape4.png";
-import gameJam1 from "./assets/photos/gamejam1.JPG";
-import gameJam2 from "./assets/photos/gamejam2.JPG";
-import gameJam3 from "./assets/photos/gamejam3.JPG";
-import tetris from "./assets/photos/tetris.JPG";
-import whale from "./assets/photos/whale.JPG";
+
+import mushroom from "./assets/games/mushroom.png";
+import fall from "./assets/games/fall.png";
+import lone from "./assets/games/lone.png";
+import sock from "./assets/games/sock.png";
+import charmer from "./assets/games/charmer.png";
 
 import FacebookIcon from "@material-ui/icons/Facebook";
 import TwitterIcon from "@material-ui/icons/Twitter";
@@ -259,7 +262,58 @@ const styles = (theme) => ({
         paddingTop: "15px",
         paddingBottom: "15px",
     },
+    gameText: {
+        paddingTop: "15px",
+        fontSize: "18px",
+    },
+    gameTextRight: {
+        textAlign: "right",
+        paddingBottom: "12px",
+        fontSize: "18px",
+    },
+    quoteText: {
+        fontSize: "20px",
+        vairant: "h4",
+    }
 });
+
+const games = [
+    {
+        name: "MY MINI MUSHROOM",
+        img: "./assets/games/mushroom.png",
+        ref: "google.com",
+        alt: "good game"
+    }
+]
+
+const Game = ({game, classes, ...props}) => {
+    return (<Box className={cn(classes.box0)}>
+                    <Box className={cn(classes.blurBox)}></Box>
+                    <Box className={cn(classes.box1)}>
+                        <Box
+                            className={cn(
+                                classes.bestBoyeBox,
+                                classes.boxShadowLeft
+                            )}
+                        >
+                            <a href={game.ref}>
+                            <img
+                                src={game.img}
+                                alt={game.alt}
+                                className={cn(classes.bestBoye)}
+                            />
+                            </a>
+                            <div className={cn(classes.bestBoyeBorderLeft)}>
+                                {" "}
+                            </div>
+                            
+                        </Box>
+                        <Typography className={cn(classes.gameText)}>
+                            {game.name}
+                        </Typography>
+                    </Box>
+                    </Box>)
+}
 
 const GameShowcase = ({ classes, rootClassName, className, ...props }) => {
     return (
@@ -307,70 +361,37 @@ const GameShowcase = ({ classes, rootClassName, className, ...props }) => {
                             )}
                         >
                             <img
-                                src={gameJam2}
+                                src={mushroom}
                                 alt="a very good boye"
                                 className={cn(classes.bestBoye)}
                             />
                             <div className={cn(classes.bestBoyeBorderLeft)}>
                                 {" "}
                             </div>
+                            
                         </Box>
-                    </Box>
-                    <Box className={cn(classes.box1, classes.rightBox)}>
-                        <Typography
-                            variant="h4"
-                            className={cn(classes.titleRight)}
-                        >
-                            WEEKLY MEETINGS
-                        </Typography>
-                        <Typography className={cn(classes.paragraph)}>
-                            Tune in each week as numerous gaming professionals
-                            stop by the GDC to share their stories of how they
-                            made it, and the advice they have for those who are
-                            looking to enter into the gaming industry. On top of
-                            giving career advice, members are also exposed to
-                            various topics concerning the industry. Great
-                            chances to learn about diverse aspects of the game
-                            development world!
-                            <br />
-                        </Typography>
-                    </Box>
-                </Box>
-
-                <Box className={cn(classes.box0)}>
-                    <Box className={cn(classes.blurBox)}></Box>
-                    <Box className={cn(classes.box1, classes.leftBox)}>
-                        <Typography
-                            variant="h4"
-                            className={cn(classes.titleLeft)}
-                        >
-                            WORKSHOPS
-                        </Typography>
-                        <Typography className={cn(classes.paragraph)}>
-                            Led by EGaDS officers, students will get hands-on
-                            experience in vital tools to game development such
-                            as Unreal Blueprints, C# scripting for Unity, and
-                            Blender. Designed for beginners in mind (and
-                            intermediate users), members will walk away being
-                            confident in starting their own projects!
-                            <br />
+                        <Typography className={cn(classes.gameText)}>
+                            MY MINI MUSHROOM
                         </Typography>
                     </Box>
                     <Box className={cn(classes.box1)}>
+                        <Typography className={cn(classes.gameTextRight)}>
+                            THE FALL
+                        </Typography>
                         <Box
                             className={cn(
                                 classes.bestBoyeBox,
-                                classes.boxShadowRight
+                                classes.boxShadowLeft
                             )}
                         >
                             <img
-                                src={gameJam3}
+                                src={fall}
                                 alt="a very good boye"
                                 className={cn(classes.bestBoye)}
                             />
-                            <div
-                                className={cn(classes.bestBoyeBorderRight)}
-                            ></div>
+                            <div className={cn(classes.bestBoyeBorderLeft)}>
+                                {" "}
+                            </div>
                         </Box>
                     </Box>
                 </Box>
@@ -385,30 +406,22 @@ const GameShowcase = ({ classes, rootClassName, className, ...props }) => {
                             )}
                         >
                             <img
-                                src={tetris}
+                                src={sock}
                                 alt="a very good boye"
                                 className={cn(classes.bestBoye)}
                             />
-                            <div
-                                className={cn(classes.bestBoyeBorderLeft)}
-                            ></div>
+                            <div className={cn(classes.bestBoyeBorderLeft)}>
+                                {" "}
+                            </div>
+                            
                         </Box>
+                        <Typography className={cn(classes.gameText)}>
+                            SOCK
+                        </Typography>
                     </Box>
                     <Box className={cn(classes.box1, classes.rightBox)}>
-                        <Typography
-                            variant="h4"
-                            className={cn(classes.titleRight)}
-                        >
-                            GAME JAMS
-                        </Typography>
-                        <Typography className={cn(classes.paragraph)}>
-                            Throughout the academic year, EGaDs hosts game jams
-                            such as the Global Game Jam and the UT Game Jame
-                            where members have the chance to collaborate with
-                            their fellow peers and friends to design a game. A
-                            fun opportunity to test your skills and gain
-                            experience!
-                            <br />
+                        <Typography className={cn(classes.quoteText)}>
+                            "just socks."
                         </Typography>
                     </Box>
                 </Box>
@@ -439,7 +452,7 @@ const GameShowcase = ({ classes, rootClassName, className, ...props }) => {
                             )}
                         >
                             <img
-                                src={whale}
+                                src={lone}
                                 alt="a very good boye"
                                 className={cn(classes.bestBoye)}
                             />
@@ -594,7 +607,7 @@ const GameShowcase = ({ classes, rootClassName, className, ...props }) => {
 
             <Container align="center" className={cn(classes.footer)}>
                 <div className={cn(classes.inlineBlock, classes.heWoof)}>
-                    <Typography align="center">woof</Typography>
+                    <Typography align="center">bork</Typography>
                     <img
                         src={goodboye}
                         alt="a very good boye"
