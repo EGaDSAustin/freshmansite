@@ -12,7 +12,7 @@ import sheets from "./assets/blueshape2.png";
 import hole from "./assets/blueshape5.png";
 import ball from "./assets/blueshape4.png";
 
-import mushroom from "./assets/games/mushroom.png";
+// import mushroom from "./assets/games/mushroom.png";
 import fall from "./assets/games/fall.png";
 import lone from "./assets/games/lone.png";
 import sock from "./assets/games/sock.png";
@@ -274,46 +274,146 @@ const styles = (theme) => ({
     quoteText: {
         fontSize: "20px",
         vairant: "h4",
-    }
+    },
 });
 
 const games = [
     {
-        name: "MY MINI MUSHROOM",
-        img: "./assets/games/mushroom.png",
-        ref: "google.com",
-        alt: "good game"
-    }
-]
+        nameLeft: "MY MINI MUSHROOM",
+        imgLeft: "./assets/games/mushroom.png",
+        refLeft: "http://google.com",
+        altLeft: "good game",
 
-const Game = ({game, classes, ...props}) => {
-    return (<Box className={cn(classes.box0)}>
-                    <Box className={cn(classes.blurBox)}></Box>
-                    <Box className={cn(classes.box1)}>
-                        <Box
-                            className={cn(
-                                classes.bestBoyeBox,
-                                classes.boxShadowLeft
-                            )}
-                        >
-                            <a href={game.ref}>
-                            <img
-                                src={game.img}
-                                alt={game.alt}
-                                className={cn(classes.bestBoye)}
-                            />
-                            </a>
-                            <div className={cn(classes.bestBoyeBorderLeft)}>
-                                {" "}
-                            </div>
-                            
-                        </Box>
-                        <Typography className={cn(classes.gameText)}>
-                            {game.name}
-                        </Typography>
+        nameRight: "THE FALL",
+        imgRight: "./assets/games/fall.png",
+        refRight: "http://google.com",
+        altRight: "good game",
+    },
+    {
+        nameLeft: "REALM OF THE LOST SOCK",
+        imgLeft: "./assets/games/sock.png",
+        refLeft: "http://google.com",
+        altLeft: "good game",
+
+        quoteRight: "socks ahahahah",
+    },
+    {
+        nameLeft: "CHARMER",
+        imgLeft: "./assets/games/charmer.png",
+        refLeft: "http://google.com",
+        altLeft: "good game",
+
+        nameRight: "CHARMER",
+        imgRight: "./assets/games/charmer.png",
+        refRight: "http://google.com",
+        altRight: "good game",
+    },
+];
+
+const GameRow = ({ classes, game, ...props }) => {
+    return (
+        <Box className={cn(classes.box0)}>
+            <Box className={cn(classes.blurBox)}></Box>
+            <Box className={cn(classes.box1)}>
+                <a href={game.refRight}>
+                    <Box
+                        className={cn(
+                            classes.bestBoyeBox,
+                            classes.boxShadowLeft
+                        )}
+                    >
+                        <img
+                            src={require(game.imgRight + "")}
+                            alt={game.altRight}
+                            className={cn(classes.bestBoye)}
+                        />
+
+                        <div className={cn(classes.bestBoyeBorderLeft)}> </div>
                     </Box>
-                    </Box>)
-}
+                </a>
+                <Typography className={cn(classes.gameText)}>
+                    {game.nameRight}
+                </Typography>
+            </Box>
+
+            <Box className={cn(classes.box1)}>
+                <Typography className={cn(classes.gameTextRight)}>
+                    {game.nameLeft}
+                </Typography>
+                <a href={game.refLeft}>
+                    <Box
+                        className={cn(
+                            classes.bestBoyeBox,
+                            classes.boxShadowLeft
+                        )}
+                    >
+                        <img
+                            src={require(game.imgLeft + "")}
+                            alt={game.altLeft}
+                            className={cn(classes.bestBoye)}
+                        />
+                        <div className={cn(classes.bestBoyeBorderLeft)}> </div>
+                    </Box>
+                </a>
+            </Box>
+        </Box>
+    );
+};
+
+const QuoteRow = ({ classes, game, ...props }) => {
+    return (
+        <Box className={cn(classes.box0)}>
+            <Box className={cn(classes.blurBox)}></Box>
+            <Box className={cn(classes.box1)}>
+                <a href={game.refLeft}>
+                    <Box
+                        className={cn(
+                            classes.bestBoyeBox,
+                            classes.boxShadowLeft
+                        )}
+                    >
+                        <img
+                            src={require(game.imgLeft + "")}
+                            alt={game.altLeft}
+                            className={cn(classes.bestBoye)}
+                        />
+
+                        <div className={cn(classes.bestBoyeBorderLeft)}> </div>
+                    </Box>
+                </a>
+                <Typography className={cn(classes.gameText)}>
+                    {game.nameLeft}
+                </Typography>
+            </Box>
+
+            <Box className={cn(classes.box1, classes.rightBox)}>
+                <Typography className={cn(classes.quoteText)}>
+                    {game.quoteRight}
+                </Typography>
+            </Box>
+        </Box>
+    );
+};
+
+// const GameLeft = ({ classes, game, ...props }) => {
+//     return (
+//         <Box className={cn(classes.box1)}>
+//             <Typography className={cn(classes.gameTextRight)}>
+//                 {game.name}
+//             </Typography>
+//             <a href={game.ref}>
+//                 <Box className={cn(classes.bestBoyeBox, classes.boxShadowLeft)}>
+//                     <img
+//                         src={require(game.img + "")}
+//                         alt={game.alt}
+//                         className={cn(classes.bestBoye)}
+//                     />
+//                     <div className={cn(classes.bestBoyeBorderLeft)}> </div>
+//                 </Box>
+//             </a>
+//         </Box>
+//     );
+// };
 
 const GameShowcase = ({ classes, rootClassName, className, ...props }) => {
     return (
@@ -338,63 +438,36 @@ const GameShowcase = ({ classes, rootClassName, className, ...props }) => {
                             GAMES
                         </Typography>
                         <Typography className={cn(classes.paragraph)}>
-                            EGaDS! members make some omega cute video games blah 
-                            blah blah blah blah blahblah blah blahblah blah 
-                            blahblah blah blahblah blah blah 
-                            EGaDS! members make some omega cute video games blah 
-                            blah blah blah blah blahblah blah blahblah blah 
-                            blahblah blah blahblah blah blah
-                            EGaDS! members make some omega cute video games blah 
-                            blah blah blah blah blahblah blah blahblah blah 
-                            blahblah blah blahblah blah blah
+                            EGaDS! members make some omega cute video games blah
+                            blah blah blah blah blahblah blah blahblah blah
+                            blahblah blah blahblah blah blah EGaDS! members make
+                            some omega cute video games blah blah blah blah blah
+                            blahblah blah blahblah blah blahblah blah blahblah
+                            blah blah EGaDS! members make some omega cute video
+                            games blah blah blah blah blah blahblah blah
+                            blahblah blah blahblah blah blahblah blah blah
                         </Typography>
                     </Box>
                 </Box>
 
-                <Box className={cn(classes.box0)}>
-                    <Box className={cn(classes.blurBox)}></Box>
-                    <Box className={cn(classes.box1)}>
-                        <Box
-                            className={cn(
-                                classes.bestBoyeBox,
-                                classes.boxShadowLeft
-                            )}
-                        >
-                            <img
-                                src={mushroom}
-                                alt="a very good boye"
-                                className={cn(classes.bestBoye)}
-                            />
-                            <div className={cn(classes.bestBoyeBorderLeft)}>
-                                {" "}
-                            </div>
-                            
-                        </Box>
-                        <Typography className={cn(classes.gameText)}>
-                            MY MINI MUSHROOM
-                        </Typography>
-                    </Box>
-                    <Box className={cn(classes.box1)}>
-                        <Typography className={cn(classes.gameTextRight)}>
-                            THE FALL
-                        </Typography>
-                        <Box
-                            className={cn(
-                                classes.bestBoyeBox,
-                                classes.boxShadowLeft
-                            )}
-                        >
-                            <img
-                                src={fall}
-                                alt="a very good boye"
-                                className={cn(classes.bestBoye)}
-                            />
-                            <div className={cn(classes.bestBoyeBorderLeft)}>
-                                {" "}
-                            </div>
-                        </Box>
-                    </Box>
-                </Box>
+                    {games.map((game, idx) => {
+                        if (idx % 2 == 0)
+                            return (
+                                <GameRow
+                                    game={game}
+                                    classes={classes}
+                                    key={idx}
+                                />
+                            );
+                        else
+                            return (
+                                <QuoteRow
+                                    game={game}
+                                    classes={classes}
+                                    key={idx}
+                                />
+                            );
+                    })}
 
                 <Box className={cn(classes.box0)}>
                     <Box className={cn(classes.blurBox)}></Box>
@@ -413,7 +486,6 @@ const GameShowcase = ({ classes, rootClassName, className, ...props }) => {
                             <div className={cn(classes.bestBoyeBorderLeft)}>
                                 {" "}
                             </div>
-                            
                         </Box>
                         <Typography className={cn(classes.gameText)}>
                             SOCK
