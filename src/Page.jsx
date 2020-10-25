@@ -2,7 +2,6 @@ import React from "react";
 import { Typography, Container, Box, Link } from "@material-ui/core";
 import { withStyles } from "@material-ui/styles";
 import cn from "classnames";
-import goodboye from "./assets/goodboye.png";
 import splash from "./assets/photos/carmen.jpg";
 import torus from "./assets/blueshape1.png";
 import twisty from "./assets/blueshape3.png";
@@ -15,6 +14,7 @@ import gameJam3 from "./assets/photos/gamejam3.JPG";
 import tetris from "./assets/photos/tetris.JPG";
 import whale from "./assets/photos/whale.JPG";
 
+import Bork from './components/Bork';
 import Socials from './components/Socials';
 import SplashCardLeft from './components/SplashCardLeft';
 import SplashCardRight from './components/SplashCardRight';
@@ -483,7 +483,8 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                 />
             </Container>
 
-            <Container align="center" className={cn(classes.footer)}>
+            <Bork woof="woof"/>
+            {/* <Container align="center" className={cn(classes.footer)}>
                 <div className={cn(classes.inlineBlock, classes.heWoof)}>
                     <Typography align="center">woof</Typography>
                     <img
@@ -492,7 +493,7 @@ const Page = ({ classes, rootClassName, className, ...props }) => {
                         className={cn(classes.goodBoye)}
                     />
                 </div>
-            </Container>
+            </Container> */}
         </div>
     );
 };

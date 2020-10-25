@@ -1,9 +1,8 @@
 import React from "react";
-import { Typography, Container, Box, Link, SvgIcon } from "@material-ui/core";
+import { Typography, Container, Box, Link } from "@material-ui/core";
 import { withStyles } from "@material-ui/styles";
 import cn from "classnames";
 
-import goodboye from "./assets/goodboye.png";
 import splash from "./assets/photos/carmen.jpg";
 
 import torus from "./assets/blueshape1.png";
@@ -12,20 +11,7 @@ import sheets from "./assets/blueshape2.png";
 import hole from "./assets/blueshape5.png";
 import ball from "./assets/blueshape4.png";
 
-import Socials from './components/Socials';
-
-// import mushroom from "./assets/games/mushroom.png";
-// import fall from "./assets/games/fall.png";
-// import lone from "./assets/games/lone.png";
-import sock from "./assets/games/sock.png";
-// import charmer from "./assets/games/charmer.png";
-
-import FacebookIcon from "@material-ui/icons/Facebook";
-import TwitterIcon from "@material-ui/icons/Twitter";
-import MailIcon from "@material-ui/icons/Mail";
-import YouTubeIcon from "@material-ui/icons/YouTube";
-
-import { ReactComponent as DiscordIcon } from "./assets/Discord-Logo-White.svg";
+import Bork from './components/Bork';
 
 const styles = (theme) => ({
     root: {
@@ -249,21 +235,6 @@ const styles = (theme) => ({
     lessTopPadding: {
         paddingTop: "20px",
     },
-    heWoof: {
-        width: "15%",
-        "&:hover": {
-            color: "black",
-        },
-    },
-    discord: {
-        height: "45px",
-        width: "45px",
-        textAlign: "center",
-    },
-    discordBox: {
-        paddingTop: "15px",
-        paddingBottom: "15px",
-    },
     gameText: {
         paddingTop: "15px",
         fontSize: "18px",
@@ -279,7 +250,7 @@ const styles = (theme) => ({
     },
 });
 
-/*
+
 const games = [
     {
         type: "game",
@@ -339,13 +310,6 @@ const games = [
 
     },
     {
-        type: "quote",
-        props: {
-            text: "socks hooray",
-        },
-
-    },
-    {
         type: "game",
         props: {
             name: "REALM OF THE LOST SOCK",
@@ -355,92 +319,51 @@ const games = [
         },
 
     },
-]
-
-*/
-
-const games = [
     {
-        nameLeft: "MY MINI MUSHROOM",
-        imgLeft: "./assets/games/mushroom.png",
-        refLeft: "http://google.com",
-        altLeft: "good game",
+        type: "quote",
+        props: {
+            text: "socks hooray",
+        },
 
-        nameRight: "THE FALL",
-        imgRight: "./assets/games/fall.png",
-        refRight: "http://google.com",
-        altRight: "good game",
-    },
-    {
-        nameLeft: "REALM OF THE LOST SOCK",
-        imgLeft: "./assets/games/sock.png",
-        refLeft: "http://google.com",
-        altLeft: "good game",
-
-        quoteRight: "socks ahahahah",
-    },
-    {
-        nameLeft: "CHARMER",
-        imgLeft: "./assets/games/charmer.png",
-        refLeft: "http://google.com",
-        altLeft: "good game",
-
-        nameRight: "CHARMER",
-        imgRight: "./assets/games/charmer.png",
-        refRight: "http://google.com",
-        altRight: "good game",
-    },
-    {
-        nameLeft: "REALM OF THE LOST SOCK",
-        imgLeft: "./assets/games/sock.png",
-        refLeft: "http://google.com",
-        altLeft: "good game",
-
-        quoteRight: "socks ahahahah",
     },
 ];
 
-const GameRow = ({ classes, game, ...props }) => {
+// generic row for showcase items
+const ShowcaseRow = ({ classes, left, right, ...props }) => {
     return (
         <Box className={cn(classes.box0)}>
             <Box className={cn(classes.blurBox)}></Box>
-
-            <GameBottomTitle
-                game={game}
-                classes={classes}
-            />
-            <GameTopTitle
-                game={game}
-                classes={classes}
-            />
+            {left}
+            {right}
         </Box>
     );
 };
 
-const QuoteRow = ({ classes, game, ...props }) => {
+const QuoteLeft = ({ classes, quote, ...props}) => {
     return (
-        <Box className={cn(classes.box0)}>
-            <Box className={cn(classes.blurBox)}></Box>
-
-            <GameBottomTitle
-                game={game}
-                classes={classes}
-            />
-
-            <Box className={cn(classes.box1, classes.rightBox)}>
+        <Box className={cn(classes.box1, classes.leftbox)}>
                 <Typography className={cn(classes.quoteText)}>
-                    {game.quoteRight}
+                    {quote.text}
                 </Typography>
             </Box>
-        </Box>
+    );
+};
+
+const QuoteRight = ({ classes, quote, ...props}) => {
+    return (
+        <Box className={cn(classes.box1, classes.rightBox)}>
+                <Typography className={cn(classes.quoteText)}>
+                    {quote.text}
+                </Typography>
+            </Box>
     );
 };
 
 // title on the bottom (will show up on left)
-const GameBottomTitle = ({ classes, game, ...props }) => {
+const GameLeft = ({ classes, game, ...props }) => {
     return (
         <Box className={cn(classes.box1)}>
-            <a href={game.refLeft}>
+            <a href={game.ref}>
                 <Box
                     className={cn(
                         classes.bestBoyeBox,
@@ -448,8 +371,8 @@ const GameBottomTitle = ({ classes, game, ...props }) => {
                     )}
                 >
                     <img
-                        src={require(game.imgLeft + "")}
-                        alt={game.altLeft}
+                        src={require(game.img + "")}
+                        alt={game.alt}
                         className={cn(classes.bestBoye)}
                     />
 
@@ -457,20 +380,20 @@ const GameBottomTitle = ({ classes, game, ...props }) => {
                 </Box>
             </a>
             <Typography className={cn(classes.gameText)}>
-                {game.nameLeft}
+                {game.name}
             </Typography>
         </Box>
     );
 };
 
 // title on the top (will show up on the right)
-const GameTopTitle = ({ classes, game, ...props }) => {
+const GameRight = ({ classes, game, ...props }) => {
     return(
         <Box className={cn(classes.box1)}>
             <Typography className={cn(classes.gameTextRight)}>
-                {game.nameRight}
+                {game.name}
             </Typography>
-            <a href={game.refRight}>
+            <a href={game.ref}>
                 <Box
                     className={cn(
                         classes.bestBoyeBox,
@@ -478,8 +401,8 @@ const GameTopTitle = ({ classes, game, ...props }) => {
                     )}
                 >
                     <img
-                        src={require(game.imgRight + "")}
-                        alt={game.altRight}
+                        src={require(game.img + "")}
+                        alt={game.alt}
                         className={cn(classes.bestBoye)}
                     />
 
@@ -492,6 +415,52 @@ const GameTopTitle = ({ classes, game, ...props }) => {
 };
 
 const GameShowcase = ({ classes, rootClassName, className, ...props }) => {
+    // generate components for each game object
+    let objs = [];
+    games.map((game, idx) => {
+        let obj;
+        if (idx % 2 === 0) {
+            if(game.type === "quote") {
+                obj = 
+                    <QuoteLeft 
+                        quote={game.props}
+                        classes={classes}
+                    />;
+            } else {
+                obj = 
+                    <GameLeft
+                        game={game.props}
+                        classes={classes}
+                    />
+            }
+        } else {
+            if(game.type === "quote") {
+                obj = 
+                    <QuoteRight 
+                        quote={game.props}
+                        classes={classes}
+                    />;
+            } else {
+                obj = 
+                    <GameRight
+                        game={game.props}
+                        classes={classes}
+                    />
+            }
+        }
+        objs[idx] = obj;
+        return idx;
+    });
+    // group game objects into rows with two items each
+    let rows = [];
+    for(var i = 0; i < objs.length/2 + objs.length % 2; i ++) {
+        rows[i] = [];
+        rows[i][0] = objs[i * 2];
+        if(i * 2 + 1 < objs.length) {
+            rows[i][1] = objs[i * 2 + 1];
+        }
+    }
+    
     return (
         <div className={cn(classes.root, rootClassName, className)}>
             {/* <Container className={cn(classes.splash)}>
@@ -543,26 +512,17 @@ const GameShowcase = ({ classes, rootClassName, className, ...props }) => {
                     </Box>
                 </Box>
                 
-
-                    {games.map((game, idx) => {
-                        if (idx % 2 === 0)
-                            return (
-                                <GameRow
-                                    game={game}
-                                    classes={classes}
-                                    key={idx}
-                                />
-                            );
-                        else
-                            return (
-                                <QuoteRow
-                                    game={game}
-                                    classes={classes}
-                                    key={idx}
-                                />
-                            );
-                    })}
-
+                {/* render showcase rows */}
+                {rows.map((row, idx) => {
+                    return (
+                        <ShowcaseRow
+                            left={row[0]}
+                            right={row[1]}
+                            classes={classes}
+                            key={idx}
+                        />
+                    );
+                })}
                 
                 <img
                     src={torus}
@@ -591,82 +551,8 @@ const GameShowcase = ({ classes, rootClassName, className, ...props }) => {
                 />
             </Container>
 
-            <Container align="center" className={cn(classes.footer)}>
-                <div className={cn(classes.inlineBlock, classes.heWoof)}>
-                    <Typography align="center">bork</Typography>
-                    <img
-                        src={goodboye}
-                        alt="a very good boye"
-                        className={cn(classes.goodBoye)}
-                    />
-                    
-                </div>
-                <Socials id="socialMedia"/>
-                {/* <Box
-                        className={cn(classes.box1, classes.centerBox)}
-                        id="socialMedia"
-                    >
-                        <Box
-                            className={cn(
-                                classes.transparentBox,
-                                classes.lessTopPadding,
-                                classes.inlineBlock
-                            )}
-                        >
-                            <Typography
-                                className={cn(classes.paragraph)}
-                                align="center"
-                            >
-                                <Link
-                                    href="https://discord.com/invite/JnNPF6d"
-                                    target="_blank"
-                                    rel="noopener"
-                                    className={cn(classes.social)}
-                                >
-                                    <SvgIcon
-                                        component={DiscordIcon}
-                                        viewBox="0 0 220 220"
-                                        fontSize="large"
-                                    />
-                                </Link>
-                                <Link
-                                    href="https://facebook.us16.list-manage.com/subscribe?u=91470f849ef822234cb47861a&id=34673605c6"
-                                    target="_blank"
-                                    rel="noopener"
-                                    className={cn(classes.social)}
-                                >
-                                    <MailIcon fontSize="large" />
-                                </Link>
-                                <Link
-                                    href="https://twitter.com/EGaDSAustin"
-                                    target="_blank"
-                                    rel="noopener"
-                                    className={cn(classes.social)}
-                                >
-                                    <TwitterIcon fontSize="large" />
-                                </Link>
-
-                                <Link
-                                    href="https://www.facebook.com/groups/egadsaustin"
-                                    target="_blank"
-                                    rel="noopener"
-                                    className={cn(classes.social)}
-                                >
-                                    <FacebookIcon fontSize="large" />
-                                </Link>
-                                <Link
-                                    href="https://www.youtube.com/user/egadsaustin"
-                                    target="_blank"
-                                    rel="noopener"
-                                    className={cn(classes.social)}
-                                >
-                                    <YouTubeIcon fontSize="large" />
-                                </Link>
-                            </Typography>
-                        </Box>
-                    </Box> */}
-                
-            </Container>
+            {/* footer */}
+            <Bork socials="yes" woof="bork"/>
         </div>
     );
 };
